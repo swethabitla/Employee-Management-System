@@ -1,0 +1,50 @@
+<app-user-form-container [type]="'signup'">
+  <form #signupForm="ngForm" (ngSubmit)="onSubmit()">
+
+    <label for="email">Email</label>
+    <input type="email" name="email" #userEmail="ngModel" [(ngModel)]="user.email" required [class.is-invalid]="validationErrors.isInputInvalid(userEmail)"
+      placeholder="mail@mail.com" pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?">
+
+    <div class="is-invalid" [hidden]="validationErrors.isErrorHidden(userEmail, 'required')">
+      Email is required.
+    </div>
+
+    <div class="is-invalid" [hidden]="validationErrors.isErrorHidden(userEmail, 'pattern')">
+      Email is not valid.
+    </div>
+
+
+
+    <label for="password">Password</label>
+    <input [(ngModel)]="user.password" type="password" name="password" placeholder="Must be at least 8 characters." required
+      #userPassword="ngModel" minlength="8" [class.is-invalid]="validationErrors.isInputInvalid(userPassword)">
+
+    <div class="is-invalid" [hidden]="validationErrors.isErrorHidden(userPassword, 'required')">
+      Password is required.
+    </div>
+
+    <div class="is-invalid" [hidden]="validationErrors.isErrorHidden(userPassword, 'minlength')">
+      Must be at least 8 characters.
+    </div>
+
+
+
+
+    <label for="password2">Confirm Password</label>
+    <input [class.is-invalid]="validationErrors.isInputInvalid(userPassword2)" [(ngModel)]="user.password2" type="password" name="password2"
+      required #userPassword2="ngModel" appComparePasswords="{{user.password}}">
+
+
+    <div class=" is-invalid " [hidden]="validationErrors.isErrorHidden(userPassword2, 'differentPasswords') ">
+      Passwords don't match.
+    </div>
+
+
+    <button type="submit" [disabled]="!signupForm.form.valid" class="btn-dark ">Submit</button>
+
+  </form>
+
+
+
+
+</app-user-form-container>

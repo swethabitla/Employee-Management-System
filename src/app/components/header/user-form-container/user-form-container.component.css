@@ -1,0 +1,23 @@
+div {
+  position: fixed;
+  z-index: 2;
+  top: var(--navHeight);
+  right: 0;
+  width: 100%;
+  background: var(--light2);
+  overflow: hidden;
+  color: var(--light);
+  text-align: center;
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.4);
+}
+
+h1 {
+  margin-top: 15px;
+}
+
+@media (min-width: 550px) {
+  div {
+    width: 400px;
+    right: 50px;
+  }
+}

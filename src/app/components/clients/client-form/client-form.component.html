@@ -1,0 +1,68 @@
+<div class="card" *ngIf="client">
+
+  <form #addClientForm="ngForm" (ngSubmit)="onSubmit()">
+    <flash-messages *ngIf="showMessage"></flash-messages>
+    <label for="firstName">First Name</label>
+    <input type="text" name="firstName" [(ngModel)]="client.firstName" [class.is-invalid]="validationErrors.isInputInvalid(clientFirstName)"
+      #clientFirstName="ngModel" required>
+
+    <div class="is-invalid" [hidden]="validationErrors.isErrorHidden(clientFirstName, 'required')">
+      First name is required.
+    </div>
+
+
+
+
+
+    <label for="lastName">Last Name</label>
+    <input type="text" name="lastName" [(ngModel)]="client.lastName" [class.is-invalid]="validationErrors.isInputInvalid(clientLastName)"
+      #clientLastName="ngModel" required>
+
+    <div class="is-invalid" [hidden]="validationErrors.isErrorHidden(clientLastName, 'required')">
+      Last name is required.
+    </div>
+
+
+    <label for="employeeid">EmployeeID</label>
+    <input type="employeeid" name="employeeid" [(ngModel)]="client.employeeid" #clientEmployeeid="ngModel">
+
+    <label for="position">Position</label>
+    <input type="position" name="position" [(ngModel)]="client.position" #clientPosition="ngModel">
+
+    <label for="city">City</label>
+    <input type="city" name="city" [(ngModel)]="client.city" #clientCity="ngModel">
+
+    <label for="email">Email</label>
+    <input type="email" name="email" [(ngModel)]="client.email" #clientEmail="ngModel" required pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+      [class.is-invalid]="validationErrors.isInputInvalid(clientEmail)">
+
+
+    <div class="is-invalid" [hidden]="validationErrors.isErrorHidden(clientEmail, 'required')">
+      Email is required.
+    </div>
+
+    <div class="is-invalid" [hidden]="validationErrors.isErrorHidden(clientEmail, 'pattern')">
+      Email is not valid.
+    </div>
+
+
+
+
+    <label for="phone">Phone</label>
+    <input type="number" name="phone" [(ngModel)]="client.phone" required pattern="[0-9]{10}" #clientPhone="ngModel" [class.is-invalid]="validationErrors.isInputInvalid(clientPhone)">
+
+
+    <div class="is-invalid" [hidden]="validationErrors.isErrorHidden(clientPhone, 'required')">
+      Phone number is required.
+    </div>
+
+    <div class="is-invalid" [hidden]="validationErrors.isErrorHidden(clientPhone, 'pattern')">
+      Phone number is not valid.
+    </div>
+
+
+
+    <button [disabled]="!addClientForm.form.valid" class="btn-dark">Submit</button>
+
+  </form>
+</div>

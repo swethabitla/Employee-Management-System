@@ -1,0 +1,48 @@
+.chat {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.card {
+  padding: 0;
+  overflow-y: scroll;
+  max-height: 450px;
+}
+
+li {
+  border-bottom: 1px dotted var(--dark);
+  padding: 5px 10px;
+}
+
+li p {
+  font-size: 14px;
+}
+
+li:nth-last-child() {
+  border: none;
+}
+
+time {
+  font-size: 11px;
+  float: right;
+}
+
+textarea {
+  border: 1px solid var(--dark2);
+  padding: 10px;
+  height: 60px;
+}
+
+textarea::placeholder,
+textarea {
+  font-size: 16px;
+}
+
+button {
+  margin-top: 5px;
+}
+
+form {
+  padding: 0;
+  margin-top: 15px;
+}

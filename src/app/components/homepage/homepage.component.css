@@ -1,0 +1,36 @@
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1 {
+  color: var(--dark);
+  font-size: 3em;
+  text-align: center;
+  font-weight: bold;
+  color: var(--light);
+  text-transform: uppercase;
+  text-shadow: 2px 2px 2px #000;
+}
+
+span {
+  width: 100px;
+  height: 100px;
+  background: url('data:image/svg+xml,\
+  <svg xmlns="http://www.w3.org/2000/svg">\
+    <style>@keyframes border{to{stroke-dashoffset:-50px;}}</style>\
+    <linearGradient id="gradient" gradientTransform="rotate(45)">\
+      <stop stop-color="#4db6ac"></stop>\
+      <stop stop-color="#004d40" offset="1"></stop>\
+    </linearGradient>\
+    <circle cx="50" cy="50" r="40" stroke="url(#gradient)" stroke-width="10" fill="none" stroke-dasharray="25px\ 25px" style="animation:border 1s infinite linear;"/>\
+    </svg>');
+}
+
+@media (min-width: 600px) {
+  h1 {
+    font-size: 4em;
+  }
+}

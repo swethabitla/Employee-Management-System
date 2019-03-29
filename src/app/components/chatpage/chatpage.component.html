@@ -1,0 +1,17 @@
+<div class="page">
+  <div class="chat">
+    <div class="card">
+      <ul>
+        <li *ngFor="let msg of messages">
+          <strong>{{msg.user}}: </strong>
+          <time>{{msg.date.toDate() | date}}</time>
+          <p>{{msg.msg}}</p>
+        </li>
+      </ul>
+    </div>
+    <form (ngSubmit)="onSubmit()">
+      <textarea name="message" placeholder="Add new message" required [(ngModel)]="newMessage.msg"></textarea>
+      <button [disabled]="!newMessage.msg" class="btn-dark">Send</button>
+    </form>
+  </div>
+</div>

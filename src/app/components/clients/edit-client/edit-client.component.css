@@ -1,0 +1,14 @@
+.client-edit {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.client-edit > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+h3 {
+  display: flex;
+  justify-content: space-between;
+}

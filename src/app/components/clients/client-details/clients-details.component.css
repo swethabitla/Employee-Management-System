@@ -1,0 +1,24 @@
+.client-details {
+  margin: 0 auto;
+  width: 300px;
+}
+
+.card {
+  margin-top: 20px;
+  padding: 20px;
+}
+
+li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  margin-bottom: 30px;
+}
+
+strong {
+  justify-self: flex-end;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+}

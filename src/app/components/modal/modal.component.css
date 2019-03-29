@@ -1,0 +1,40 @@
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 10;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  width: 80%;
+  position: relative;
+  padding: 20px;
+  padding-top: 50px;
+}
+
+i {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 2.5em;
+  padding: 5px;
+  color: var(--danger);
+}
+
+i:hover {
+  cursor: pointer;
+  color: var(--error);
+}
+
+@media (min-width: 600px) {
+  .modal-content {
+    width: auto;
+    min-width: 350px;
+  }
+}

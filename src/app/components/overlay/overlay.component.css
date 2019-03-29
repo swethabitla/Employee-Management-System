@@ -1,0 +1,9 @@
+.overlay {
+  position: absolute;
+  top: var(--navHeight);
+  left: 0;
+  width: 100%;
+  height: calc(100% - var(--navHeight) * 2);
+  z-index: 1;
+  background: #e0f2f170;
+}

@@ -1,0 +1,9 @@
+<app-modal [(state)]="showModal" (changeState)="showModal = $event" *ngIf="client">
+  Do you want to remove
+  <strong>{{client.firstName}} {{client.lastName}}</strong> ?
+  <div class="controls">
+    <button class="btn-danger" (click)="onDeleteConfirm()">Yes</button>
+    <button class="btn-dark" (click)="onDeleteCancel()">No</button>
+  </div>
+
+</app-modal>

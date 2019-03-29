@@ -1,0 +1,5 @@
+<ul [@toggleMenu]="state" class="nav-mobile">
+  <a routerLink="{{link.url}}" *ngFor="let link of links">
+    <li>{{link.name}}</li>
+  </a>
+</ul>

@@ -1,0 +1,7 @@
+<div class="modal" *ngIf="state" [@fadeInOut]>
+  <div class="modal-content card">
+
+    <i (click)="onClick()" class="fa fa-times-circle"></i>
+
+    <ng-content></ng-content>
+  </div>

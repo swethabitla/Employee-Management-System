@@ -1,0 +1,53 @@
+<div class="page">
+  <div class="client-details">
+
+    <app-back-btn></app-back-btn>
+
+    <div class="card">
+      <ul *ngIf="client">
+        <li>
+          Name:
+          <strong>{{client.firstName}} {{client.lastName}}</strong>
+        </li>
+        <li>
+          EmployeeID:
+          <strong>{{client.employeeid}}</strong>
+        </li>
+        <li>
+          Email:
+          <strong>{{client.email}}</strong>
+        </li>
+        <li>
+          Phone number:
+          <strong>{{client.phone}}</strong>
+        </li>
+        <li>
+          Salary:
+          <strong>{{client.balance | currency:"EUR"}}</strong>
+        </li>
+        <li>
+          Position:
+          <strong>{{client.position}}</strong>
+        </li>
+        <li>
+          City:
+          <strong>{{client.city}}</strong>
+        </li>
+
+      </ul>
+      <div class="controls">
+        <button routerLink="/clients/edit/{{client?.id}}" class="btn-dark">Edit
+          <i class="fa fa-edit"></i>
+        </button>
+
+        <button (click)="onDeleteClick()" class="btn-danger">Delete
+          <i class="fa fa-times-circle"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <app-remove-modal [client]="client"></app-remove-modal>
+
+
+</div>

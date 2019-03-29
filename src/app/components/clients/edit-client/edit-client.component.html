@@ -1,0 +1,22 @@
+<div class="page">
+  <div class="client-edit">
+    <div>
+      <app-back-btn></app-back-btn>
+      <button class="btn-dark" (click)="openModal()">Salary
+        <i class="fa fa-edit"></i>
+      </button>
+    </div>
+    <app-client-form [client]="client" [onSubmit]="onSubmit"></app-client-form>
+  </div>
+
+  <app-modal [(state)]="modal" (changeState)="modal = $event" *ngIf="client">
+    <h3>Current Salary:
+      <strong>{{client.balance | currency:"EUR"}}</strong>
+    </h3>
+    <form (ngSubmit)="onBalanceChange()">
+      <input type="number" [(ngModel)]="client.balance" name="balance">
+      <button class="btn-dark">Change Salary</button>
+    </form>
+
+  </app-modal>
+</div>

@@ -1,0 +1,38 @@
+<nav>
+  <ng-container *ngIf="innerWidth>600 then desktop; else mobile"></ng-container>
+  <div class="user">
+    <ng-container *ngIf="user!==null; then loggedUser; else notloggedUser"></ng-container>
+  </div>
+</nav>
+
+
+<ng-template #mobile>
+  <div class="menu" [class.menu-open]="navMenu==='active'? true : false" (click)="toggleMenu()">
+    <div class="menu-bar"></div>
+    <div class="menu-bar"></div>
+    <div class="menu-bar"></div>
+    <app-nav-mobile [links]="links" [state]="navMenu"></app-nav-mobile>
+  </div>
+</ng-template>
+
+<ng-template #desktop>
+  <ul class="nav-links">
+    <a *ngFor="let link of links" routerLink="{{link.url}}" [routerLinkActive]="['active-nav-link']" [routerLinkActiveOptions]="{exact:true}">
+      <li>{{link.name}}</li>
+    </a>
+  </ul>
+</ng-template>
+
+
+
+
+<ng-template #notloggedUser>
+  <button (click)="toggleForm('login')" class="btn-light btn-scale">Login</button>
+  <button (click)="toggleForm('signup')" class="btn-light btn-scale">Sign Up</button>
+</ng-template>
+
+
+<ng-template #loggedUser>
+  <strong>{{user}}</strong>
+  <button (click)="logout()" class="btn-danger btn-scale">Logout</button>
+</ng-template>

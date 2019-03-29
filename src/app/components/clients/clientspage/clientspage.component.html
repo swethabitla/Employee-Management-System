@@ -1,0 +1,54 @@
+<div class="page">
+  <div class="clients">
+    <div class="filter">
+      <button routerLink="/clients/add" class="btn-dark">Add New Employee
+        <i class="fa fa-plus-circle"></i>
+      </button>
+      <input (input)="onChange()" type="search" placeholder="Search..." [(ngModel)]="query">
+    </div>
+
+
+    <div class="card">
+      <flash-messages></flash-messages>
+      <ul>
+        <li *ngFor="let client of visibleClients || clients">
+          <span>{{client.firstName}} {{client.lastName}}</span>
+          <span>{{client.email}}</span>
+
+
+          <div class="controls">
+
+            <button class="btn-dark">
+              <i class="fa fa-cog"></i>
+
+            </button>
+
+            <div class="dropdown">
+
+              <button routerLink="/clients/details/{{client.id}}" class="btn-dark">
+                Details
+                <i class="fa fa-info-circle"></i>
+              </button>
+
+              <button routerLink="/clients/edit/{{client.id}}" class="btn-dark">Edit
+                <i class="fa fa-edit"></i>
+              </button>
+
+              <button (click)="onDeleteClick(client)" class="btn-danger">Delete
+                <i class="fa fa-times-circle"></i>
+              </button>
+
+              
+            </div>
+          </div>
+
+
+        </li>
+      </ul>
+    </div>
+
+    <app-remove-modal [client]="currentClient"></app-remove-modal>
+  </div>
+
+
+</div>

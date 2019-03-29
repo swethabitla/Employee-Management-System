@@ -1,0 +1,22 @@
+ul {
+  position: fixed;
+  top: var(--navHeight);
+  left: -150px;
+  background: var(--light2);
+  width: 150px;
+  height: calc(100% - var(--navHeight) * 2);
+  z-index: 2;
+}
+
+ul li {
+  padding: 20px;
+  border-bottom: 1px dotted var(--light);
+}
+
+ul li:nth-last-child() {
+  border: none;
+}
+
+ul li:hover {
+  background: var(--dark);
+}

@@ -1,0 +1,23 @@
+footer {
+  background: var(--dark);
+  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.3);
+  height: var(--navHeight);
+  color: var(--light);
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.social {
+  font-size: 1.8em;
+}
+
+.social > * {
+  margin-left: 20px;
+}
+
+.social > *:hover {
+  color: var(--dark2);
+  cursor: pointer;
+}
